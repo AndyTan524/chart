@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c100000\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10120\viewh16100\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+admin_users table\
+\
+email\
+password\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+hotels table\
+\
+hotel_id\
+hotel_name\
+//\
+Mandarin Oriental\
+Resorts World Sentosa\
+Goodwood Park\
+W Sentosa Cove\
+//\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+users table\
+\
+timestamp: // created\
+\
+visitTimeStamp: //\
+\
+user_id:\
+email:\
+password:\
+\
+studentType: // boolean. False:Singaporean true: International\
+\
+// Card Info\
+studentCardFront: // url to images of card\
+studentCardBack:\
+NRICFront:\
+NRICBack:\
+workPassPhoto:\
+userName:\
+userNRIC:\
+userBirthday: \'93YYYY-MM-DD\'94\
+userGender: boolean // false: male, true: female\
+jobsDone: number\
+studentStatus: boolean\
+currentSchool: text\
+\
+// Contact\
+contactNo: text\
+address1:\
+address2:\
+emergencyContactNo: text,\
+emergencyContactName: \
+relationToEmergencyContact:\
+\
+// Payment\
+bankName: text\
+accountNo: text\
+\
+// Misc\
+asWaiter: boolean\
+dyedHair: boolean\
+visibleTattoo: boolean\
+// confirmed:\
+userConfirmed: int // 0:pending, 1:confirmed, 2:failed 3:blacklist user\
+\
+// Attire\
+userSkirt: // uri\
+userPants: // uri\
+userShoes: // uri\
+\
+userSkirtApprovedTimeStamp: //\
+userShoesApprovedTimeStamp: //\
+userPantsApprovedTimeStamp: //\
+\
+device_token://\
+device_type://Android or IOS\
+\
+verifyCode:// Forgot Password\
+jobs_done\
+\cf2 \
+userSkirtApproved\
+userPants: // uri\
+userShoes: // uri\
+\cf0 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+job_types table\
+\
+job_type_id\
+job_type_name\
+//Banquet\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+job table\
+\
+job_id\
+hotel_id\
+job_type_id\
+slot\
+current_slot\
+start_time\
+end_time\
+start_date\
+timestamp:\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+all_jobs table\
+\
+job_id\
+user_id\
+status: // pending, confirmed, failed, completed\
+// in case of completed\
+workTime_confirmed: // false, true\
+real_start://08:30\
+real_end://09:30\
+timestamp:\
+}
