@@ -1237,13 +1237,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthService = (function () {
     function AuthService(http) {
         this.http = http;
+        // m_ServerUrl = "http://localhost:3000";
+        this.m_ServerUrl = "http://47.75.138.128:3000";
     }
     AuthService.prototype.getVideo = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/user/getVideo', { headers: headers })
+        return this.http.get(this.m_ServerUrl + '/user/getVideo', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.uploadImage = function (uploadData) {
@@ -1257,31 +1259,31 @@ var AuthService = (function () {
         formData.append("emailorphone", uploadData.emailorphone);
         formData.append("filename", uploadData.filename);
         console.log(formData);
-        return this.http.post('http://localhost:3000/user/uploadImage', formData)
+        return this.http.post(this.m_ServerUrl + '/user/uploadImage', formData)
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/user/register', user, { headers: headers })
+        return this.http.post(this.m_ServerUrl + '/user/register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/user/authenticate', user, { headers: headers })
+        return this.http.post(this.m_ServerUrl + '/user/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticatePhone = function (phone) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/user/authenticatebyphone', phone, { headers: headers })
+        return this.http.post(this.m_ServerUrl + '/user/authenticatebyphone', phone, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.resetPassword = function (phone) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/user/resetpass', phone, { headers: headers })
+        return this.http.post(this.m_ServerUrl + '/user/resetpass', phone, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.getProfile = function () {
@@ -1289,7 +1291,7 @@ var AuthService = (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/user/profile', { headers: headers })
+        return this.http.get(this.m_ServerUrl + '/user/profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -1445,11 +1447,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PhoneverifyService = (function () {
     function PhoneverifyService(http) {
         this.http = http;
+        // m_ServerUrl = "http://localhost:3000";
+        this.m_ServerUrl = "http://47.75.138.128:3000";
     }
     PhoneverifyService.prototype.sendVerificationCode = function (phoneNumber) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/user/sendsms', { "phone": phoneNumber }, { headers: headers })
+        return this.http.post(this.m_ServerUrl + '/user/sendsms', { "phone": phoneNumber }, { headers: headers })
             .map(function (res) {
             return res.json();
         });
