@@ -33,9 +33,6 @@ app.use(cors());
 
 //Set Static Folder
 app.use(express.static(path.join(__dirname, 'client')));
-app.use(function(req, res) {
-    res.sendFile(path.join(__dirname, '/client', 'index.html'));
-});
 // app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
 //Body Parser Middleware
@@ -55,7 +52,9 @@ app.use('/manager', managers);
 app.get('/', (req, res)=>{
     res.send('Invalid Endpoint');
 })
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/index.html'));
+}); 
 //Start Server
 app.listen(port, ()=>{
     console.log('Server started on port ' + port);
