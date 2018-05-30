@@ -32,7 +32,7 @@ const port = 3000;
 app.use(cors());
 
 //Set Static Folder
-// app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'client')));
 app.use(function(req, res) {
     res.sendFile(path.join(__dirname, '/client', 'index.html'));
 });
