@@ -33,6 +33,9 @@ app.use(cors());
 
 //Set Static Folder
 app.use(express.static(path.join(__dirname, 'client')));
+app.use(function(req, res) {
+    res.sendFile(path.join(__dirname, '/client', 'index.html'));
+});
 // app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
 //Body Parser Middleware
