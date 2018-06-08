@@ -137,7 +137,8 @@ router.post('/findsimilarchart', (req, res, next) => {
     console.log('findsimilarchart');
     console.log(req.body);
     let option = {
-        uri : "http://192.168.1.134:8000/api/kchartcomp/",
+        // uri : "http://192.168.1.134:8000/api/kchartcomp/",
+        uri : "http://47.75.138.128:8000/api/kchartcomp/",
         method : 'POST',
         headers: {
             "Content-type": "application/json"

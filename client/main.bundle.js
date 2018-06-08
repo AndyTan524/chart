@@ -469,7 +469,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/kchart/kchart.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div id = \"chart\"></div> -->\n<div id=\"chartdiv\" style = \"width: 100%; height: 500px;\">\n</div>\n<div class = \"col-xs-12 col-md-6 col-sm-6\">\n    <button class=\"btn btn-success\" (click) = \"onAdd()\"> + </button>\n    <button class=\"btn btn-danger\" (click) = \"onRemove()\"> - </button>\n    <form id=\"formdata1\">\n        <div *ngIf = \"showFlag\" id=\"chartparent\" >\n            <h4>{{svg1caption}}</h4>\n            <div id=\"chartpicdiv\" style = \"width: 100px; height: 200px;\">\n            </div>\n        </div>\n        <div id=\"tempchartdiv\" style = \"width: 100px; height: 200px;\">\n        </div>\n        <div id=\"simchartdiv\" style = \"width: 100px; height: 200px;\">\n            <img id=\"simchartimg\" style = \"width: 300px; height: 300px;\">\n        </div>\n    </form>\n</div>\n\n<div class = \"col-xs-12 col-md-6 col-sm-6\">\n    <button class=\"btn btn-success\" (click) = \"onAdd1()\"> + </button>\n    <button class=\"btn btn-danger\" (click) = \"onRemove1()\"> - </button>\n    <div *ngIf = \"showFlag1\" id=\"chartparent1\" >\n        <h4>{{svg2caption}}</h4>\n        <div id=\"chartpicdiv1\" style = \"width: 100px; height: 200px;\">\n\n        </div>\n    </div>\n    <div id=\"tempchartdiv1\" style = \"width: 100px; height: 200px;\">\n    </div>\n</div>"
+module.exports = "<!-- <div id = \"chart\"></div> -->\n<div id=\"chartdiv\" style = \"width: 100%; height: 500px;\">\n</div>\n<div class = \"col-xs-12 col-md-6 col-sm-6\">\n    <button class=\"btn btn-success\" (click) = \"onAdd()\"> + </button>\n    <button class=\"btn btn-danger\" (click) = \"onRemove()\"> - </button>\n    <form id=\"formdata1\">\n        <div *ngIf = \"showFlag\" id=\"chartparent\" >\n            <h4>{{svg1caption}}</h4>\n            <div id=\"chartpicdiv\" style = \"width: 100px; height: 200px;\">\n            </div>\n        </div>\n        <div id=\"tempchartdiv\" style = \"width: 100px; height: 200px;\" hidden>\n        </div>\n        <div id=\"simchartdiv\" style = \"width: 100px; height: 200px;\">\n            <img id=\"simchartimg\" style = \"width: 300px; height: 300px;\">\n        </div>\n    </form>\n</div>\n\n<div class = \"col-xs-12 col-md-6 col-sm-6\">\n    <button class=\"btn btn-success\" (click) = \"onAdd1()\"> + </button>\n    <button class=\"btn btn-danger\" (click) = \"onRemove1()\"> - </button>\n    <div *ngIf = \"showFlag1\" id=\"chartparent1\" >\n        <h4>{{svg2caption}}</h4>\n        <div id=\"chartpicdiv1\" style = \"width: 100px; height: 200px;\">\n\n        </div>\n    </div>\n    <div id=\"tempchartdiv1\" style = \"width: 100px; height: 200px;\">\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1395,6 +1395,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var KchartService = (function () {
     function KchartService(http) {
         this.http = http;
+        // m_ServerUrl = "http://localhost:3000";
+        this.m_ServerUrl = "http://47.75.138.128:3000";
         this.loadToken();
     }
     KchartService.prototype.loadToken = function () {
@@ -1410,7 +1412,7 @@ var KchartService = (function () {
         // 3: high
         // 4: close
         console.log(data);
-        return this.http.post('http://localhost:3000/user/findsimilarchart/', data, { headers: headers })
+        return this.http.post(this.m_ServerUrl + '/user/findsimilarchart/', data, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     KchartService = __decorate([
